@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱情论坛-情感交流社区与恋爱话题讨论平台</title>
+    <meta name="description" content="爱情论坛是一个专注于情感交流与恋爱话题的在线社区，提供情感倾诉、恋爱技巧、婚姻家庭、失恋疗愈等板块，为网友打造温暖互助的交流空间。">
+    <meta name="keywords" content="爱情论坛,情感交流,恋爱话题,情感倾诉,恋爱技巧,婚姻家庭,失恋疗愈,情感社区">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+            background: #fdf7f9;
+            color: #3a2e39;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #ff6b8a, #ff8a9e);
+            padding: 0;
+            box-shadow: 0 2px 15px rgba(255, 107, 138, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        .logo .heart-icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 30px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: background 0.3s;
+            display: block;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .user-area {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .btn-login {
+            background: #fff;
+            color: #ff5c7c;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-login:hover {
+            background: #ffe8ed;
+        }
+        .btn-register {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-register:hover {
+            background: #fff;
+            color: #ff5c7c;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(120deg, #ffe0e8, #fff0f3, #ffd6de);
+            padding: 60px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "♥";
+            position: absolute;
+            font-size: 200px;
+            color: rgba(255, 107, 138, 0.08);
+            top: -20px;
+            right: 5%;
+            transform: rotate(20deg);
+            font-family: serif;
+        }
+        .hero::after {
+            content: "♥";
+            position: absolute;
+            font-size: 140px;
+            color: rgba(255, 107, 138, 0.08);
+            bottom: -10px;
+            left: 8%;
+            transform: rotate(-15deg);
+            font-family: serif;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #c2254f;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #6d4a57;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .hero-search {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(255, 107, 138, 0.2);
+            overflow: hidden;
+        }
+        .hero-search input {
+            flex: 1;
+            border: none;
+            padding: 15px 24px;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            color: #3a2e39;
+        }
+        .hero-search button {
+            background: #ff5c7c;
+            color: #fff;
+            border: none;
+            padding: 0 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        .hero-search button:hover {
+            background: #e74a6a;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            padding: 20px 0;
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+            border-radius: 12px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 5px 20px;
+        }
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff5c7c;
+        }
+        .stat-item .label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* Section General */
+        .section {
+            padding: 50px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 30px;
+            color: #c2254f;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff5c7c, #ffa0b5);
+            border-radius: 3px;
+        }
+        .section-title p {
+            color: #8a7580;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* Board Categories */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .board-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f7e8ec;
+        }
+        .board-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(255, 107, 138, 0.12);
+        }
+        .board-icon {
+            font-size: 40px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .board-card h3 {
+            font-size: 20px;
+            color: #3a2e39;
+            margin-bottom: 8px;
+        }
+        .board-card p {
+            color: #8a7580;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .board-meta {
+            margin-top: 14px;
+            color: #b39aa5;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Hot Topics */
+        .hot-section {
+            background: #fff;
+            border-top: 1px solid #f5e6ea;
+            border-bottom: 1px solid #f5e6ea;
+        }
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hot-item {
+            display: flex;
+            align-items: center;
+            background: #fdf7f9;
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: background 0.3s;
+        }
+        .hot-item:hover {
+            background: #ffeef2;
+        }
+        .hot-rank {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffb0c0;
+            width: 50px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .hot-rank.top3 {
+            color: #ff5c7c;
+        }
+        .hot-content {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .hot-content h3 {
+            font-size: 17px;
+            color: #3a2e39;
+            margin-bottom: 4px;
+        }
+        .hot-content p {
+            font-size: 13px;
+            color: #a08b95;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .hot-stats {
+            color: #c0aab4;
+            font-size: 13px;
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Latest Posts */
+        .latest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .post-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f7e8ec;
+            transition: all 0.3s;
+        }
+        .post-card:hover {
+            box-shadow: 0 8px 25px rgba(255, 107, 138, 0.1);
+            transform: translateY(-3px);
+        }
+        .post-card .tag {
+            display: inline-block;
+            background: #ffe0e8;
+            color: #ff5c7c;
+            font-size: 12px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .post-card h3 {
+            font-size: 18px;
+            color: #3a2e39;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .post-card p {
+            color: #8a7580;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #b39aa5;
+            font-size: 13px;
+            border-top: 1px solid #f5e6ea;
+            padding-top: 14px;
+        }
+        .post-footer .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb0c0, #ff5c7c);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Love Tips */
+        .tips-section {
+            background: linear-gradient(180deg, #fff, #fdf0f3);
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .tip-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px 24px;
+            border-left: 4px solid #ff5c7c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+        .tip-card h3 {
+            font-size: 18px;
+            color: #c2254f;
+            margin-bottom: 10px;
+        }
+        .tip-card p {
+            color: #6d5a63;
+            font-size: 14px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #fff;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fdf7f9;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            border: 1px solid #f5e6ea;
+        }
+        .faq-item h3 {
+            font-size: 17px;
+            color: #3a2e39;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item h3::before {
+            content: "Q";
+            background: #ff5c7c;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .faq-item p {
+            color: #6d5a63;
+            font-size: 15px;
+            padding-left: 38px;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #ff5c7c, #ff8a9e);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+        .cta-section p {
+            color: #ffe0e8;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .cta-btn {
+            background: #fff;
+            color: #ff5c7c;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #2d2228;
+            color: #b8a2ab;
+            padding: 50px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .footer-grid h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #ff5c7c;
+        }
+        .footer-grid ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .footer-grid ul li a:hover {
+            color: #ff8a9e;
+        }
+        .footer-bottom {
+            border-top: 1px solid #3d3038;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #8a7580;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .main-nav ul {
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .hero-search {
+                flex-direction: column;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .hero-search input {
+                padding: 15px;
+                text-align: center;
+            }
+            .hero-search button {
+                padding: 12px;
+                width: 100%;
+            }
+            .stats-bar {
+                margin-top: 20px;
+                border-radius: 12px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .section {
+                padding: 35px 0;
+            }
+            .section-title h2 {
+                font-size: 24px;
+            }
+            .board-grid,
+            .latest-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            .hot-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .hot-rank {
+                width: auto;
+            }
+            .cta-section h2 {
+                font-size: 26px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .user-area {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="#"><span class="heart-icon">♥</span>爱情论坛</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#boards">情感板块</a></li>
+                <li><a href="#hot">热门话题</a></li>
+                <li><a href="#latest">最新帖子</a></li>
+                <li><a href="#tips">恋爱指南</a></li>
+                <li><a href="#faq">帮助中心</a></li>
+            </ul>
+        </nav>
+        <div class="user-area">
+            <a href="#" class="btn-login">登录</a>
+            <a href="#" class="btn-register">注册</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1>❤ 爱情论坛</h1>
+        <p>每一个关于爱的困惑，都值得被温柔倾听。<br>在这里，我们分享故事、交流经验、寻找共鸣。</p>
+        <div class="hero-search">
+            <input type="text" placeholder="搜索情感话题、恋爱问题...">
+            <button type="button">搜索</button>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<div class="container">
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="num">12000+</div>
+            <div class="label">注册会员</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">56000+</div>
+            <div class="label">情感帖子</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">8900+</div>
+            <div class="label">恋爱故事</div>
+        </div>
+        <div class="stat-item">
+            <div class="num">150+</div>
+            <div class="label">每日新增</div>
+        </div>
+    </div>
+</div>
+
+<!-- Board Categories -->
+<section class="section" id="boards">
+    <div class="container">
+        <div class="section-title">
+            <h2>情感板块</h2>
+            <p>选择你感兴趣的话题，加入温暖的讨论</p>
+        </div>
+        <div class="board-grid">
+            <div class="board-card">
+                <span class="board-icon">💬</span>
+                <h3>恋爱交流</h3>
+                <p>分享恋爱中的甜蜜与烦恼，交流相处心得</p>
+                <div class="board-meta">
+                    <span>帖子 18.2k</span>
+                    <span>今日 156</span>
+                </div>
+            </div>
+            <div class="board-card">
+                <span class="board-icon">💍</span>
+                <h3>婚姻家庭</h3>
+                <p>探讨婚姻经营、家庭关系与幸福之道</p>
+                <div class="board-meta">
+                    <span>帖子 12.6k</span>
+                    <span>今日 98</span>
+                </div>
+            </div>
+            <div class="board-card">
+                <span class="board-icon">🌙</span>
+                <h3>失恋疗愈</h3>
+                <p>走出分手阴影，重新找回内心的力量</p>
+                <div class="board-meta">
+                    <span>帖子 9.8k</span>
+                    <span>今日 87</span>
+                </div>
+            </div>
+            <div class="board-card">
+                <span class="board-icon">💌</span>
+                <h3>暗恋心事</h3>
+                <p>那些没说出口的喜欢，在这里悄悄倾诉</p>
+                <div class="board-meta">
+                    <span>帖子 7.5k</span>
+                    <span>今日 64</span>
+                </div>
+            </div>
+            <div class="board-card">
+                <span class="board-icon">🌹</span>
+                <h3>相亲交友</h3>
+                <p>分享相亲经历，交流异性交往技巧</p>
+                <div class="board-meta">
+                    <span>帖子 6.3k</span>
+                    <span>今日 52</span>
+                </div>
+            </div>
+            <div class="board-card">
+                <span class="board-icon">💑</span>
+                <h3>异地恋情</h3>
+                <p>距离不是问题，爱能跨越千山万水</p>
+                <div class="board-meta">
+                    <span>帖子 5.1k</span>
+                    <span>今日 43</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hot Topics -->
+<section class="section hot-section" id="hot">
+    <div class="container">
+        <div class="section-title">
+            <h2>热门话题</h2>
+            <p>这些讨论正在引起大家的共鸣</p>
+        </div>
+        <div class="hot-list">
+            <div class="hot-item">
+                <span class="hot-rank top3">1</span>
+                <div class="hot-content">
+                    <h3>恋爱中该不该查看对方手机？</h3>
+                    <p>136 条回复 · 最新回复 5 分钟前</p>
+                </div>
+                <div class="hot-stats">
+                    <span>🔥 2.3k</span>
+                    <span>💬 136</span>
+                </div>
+            </div>
+            <div class="hot-item">
+                <span class="hot-rank top3">2</span>
+                <div class="hot-content">
+                    <h3>和男朋友吵架后，如何正确和好？</h3>
+                    <p>98 条回复 · 最新回复 12 分钟前</p>
+                </div>
+                <div class="hot-stats">
+                    <span>🔥 1.8k</span>
+                    <span>💬 98</span>
+                </div>
+            </div>
+            <div class="hot-item">
+                <span class="hot-rank top3">3</span>
+                <div class="hot-content">
+                    <h3>相亲第 12 次，这次会不会不一样？</h3>
+                    <p>85 条回复 · 最新回复 20 分钟前</p>
+                </div>
+                <div class="hot-stats">
+                    <span>🔥 1.5k</span>
+                    <span>💬 85</span>
+                </div>
+            </div>
+            <div class="hot-item">
+                <span class="hot-rank">4</span>
+                <div class="hot-content">
+                    <h3>异地恋 3 年，该不该放弃工作去他的城市？</h3>
+                    <p>72 条回复 · 最新回复 35 分钟前</p>
+                </div>
+                <div class="hot-stats">
+                    <span>🔥 1.2k</span>
+                    <span>💬 72</span>
+                </div>
+            </div>
+            <div class="hot-item">
+                <span class="hot-rank">5</span>
+                <div class="hot-content">
+                    <h3>第一次约会应该聊什么话题？</h3>
+                    <p>64 条回复 · 最新回复 48 分钟前</p>
+                </div>
+                <div class="hot-stats">
+                    <span>🔥 986</span>
+                    <span>💬 64</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Posts -->
+<section class="section" id="latest">
+    <div class="container">
+        <div class="section-title">
+            <h2>最新帖子</h2>
+            <p>看看大家最近在聊什么</p>
+        </div>
+        <div class="latest-grid">
+            <article class="post-card">
+                <span class="tag">恋爱交流</span>
+                <h3>在一起 100 天，记录我们的甜蜜瞬间</h3>
+                <p>今天是我们在一起的第一百天，回想起初识的场景，心里还是暖暖的。想把这个美好的时刻记录下来...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">甜</span>甜甜圈</span>
+                    <span>10 分钟前 · 32 回复</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <span class="tag">失恋疗愈</span>
+                <h3>分手第 30 天，我终于开始好好吃饭了</h3>
+                <p>这一个月像过了一个世纪那么长。从崩溃到接受，今天终于能平静地坐下来写点东西。感谢论坛里温暖的朋友们...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">晴</span>晴天</span>
+                    <span>25 分钟前 · 45 回复</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <span class="tag">婚姻家庭</span>
+                <h3>结婚五年，如何保持恋爱的感觉？</h3>
+                <p>和老公结婚五年了，孩子两岁。最近突然觉得生活越来越平淡，想听听大家是怎么经营婚姻的...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">漫</span>漫步云端</span>
+                    <span>40 分钟前 · 28 回复</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <span class="tag">暗恋心事</span>
+                <h3>偷偷喜欢了同事两年，要不要表白？</h3>
+                <p>每天一起工作，他总是很照顾我。但怕表白失败连朋友都做不成，好纠结，大家给我出出主意吧...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">小</span>小鹿乱撞</span>
+                    <span>1 小时前 · 67 回复</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <span class="tag">相亲交友</span>
+                <h3>相亲对象各方面条件都不错，但就是没感觉</h3>
+                <p>家里人都说合适，可我心里总觉得少了点什么？到底是选择合适还是心动呢？想听听过来人的看法...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">寻</span>寻找真心</span>
+                    <span>2 小时前 · 54 回复</span>
+                </div>
+            </article>
+            <article class="post-card">
+                <span class="tag">异地恋情</span>
+                <h3>异国恋第 500 天，我们终于要见面了！</h3>
+                <p>倒计时 15 天，马上就能见到朝思暮想的他了！想和大家分享这份喜悦，也祝所有异地恋的朋友坚持下去...</p>
+                <div class="post-footer">
+                    <span class="author"><span class="avatar">守</span>守候幸福</span>
+                    <span>3 小时前 · 89 回复</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Love Tips -->
+<section class="section tips-section" id="tips">
+    <div class="container">
+        <div class="section-title">
+            <h2>恋爱指南</h2>
+            <p>一些实用的小建议，帮助你更好地经营感情</p>
+        </div>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h3>💡 有效沟通</h3>
+                <p>学会表达自己的真实感受，而不是指责对方。用"我觉得..."代替"你总是..."，让对话更顺畅。</p>
+            </div>
+            <div class="tip-card">
+                <h3>💡 保持独立</h3>
+                <p>健康的恋爱关系需要两个完整的个体。保持自己的兴趣爱好和社交圈，让彼此都有成长的空间。</p>
+            </div>
+            <div class="tip-card">
+                <h3>💡 制造惊喜</h3>
+                <p>偶尔的小惊喜能让感情保鲜。不一定是贵重礼物，一份手写卡片或一顿用心的晚餐就足够温暖。</p>
+            </div>
+            <div class="tip-card">
+                <h3>💡 学会倾听</h3>
+                <p>当对方分享烦恼时，先别急着给建议。很多时候，耐心的倾听比任何建议都更有力量。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>常见问题</h2>
+            <p>关于爱情论坛，你可能想了解这些</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>爱情论坛是免费的吗？</h3>
+                <p>是的，爱情论坛完全免费开放。你可以自由浏览帖子、参与讨论、发布自己的故事，所有功能均不收取任何费用。</p>
+            </div>
+            <div class="faq-item">
+                <h3>如何保护自己的隐私？</h3>
+                <p>我们建议你在发帖时不要透露真实姓名、地址、联系方式等敏感信息。论坛也提供匿名发帖功能，你可以选择匿名分享自己的故事。</p>
+            </div>
+            <div class="faq-item">
+                <h3>发帖有什么规则吗？</h3>
+                <p>请保持友善和尊重，不发布攻击性、歧视性或骚扰性内容。我们致力于营造温暖、包容的交流环境，让每个人都能安心倾诉。</p>
+            </div>
+            <div class="faq-item">
+                <h3>如何找到志同道合的朋友？</h3>
+                <p>你可以参与感兴趣的板块讨论，回复他人的帖子，积极参加论坛组织的线上活动。真诚的交流自然会吸引真诚的朋友。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>♥ 爱需要分享，更需要倾听</h2>
+        <p>加入爱情论坛，让每一份心事都有回音</p>
+        <a href="#" class="cta-btn">立即加入我们</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">论坛简介</a></li>
+                    <li><a href="#">发展历程</a></li>
+                    <li><a href="#">加入团队</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>情感板块</h4>
+                <ul>
+                    <li><a href="#">恋爱交流</a></li>
+                    <li><a href="#">婚姻家庭</a></li>
+                    <li><a href="#">失恋疗愈</a></li>
+                    <li><a href="#">暗恋心事</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>帮助支持</h4>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">论坛规则</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">举报反馈</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博社区</a></li>
+                    <li><a href="#">抖音号</a></li>
+                    <li><a href="#">官方QQ群</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 爱情论坛 · 用心交流，为爱发声 | 本站所有内容均为网友分享，仅供交流参考</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
