@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六点-早晨六点习惯养成与高效生活指南</title>
+    <meta name="description" content="六点，探索清晨六点的生活方式。了解早起的好处、科学方法、成功案例与实用建议，帮助你建立健康的晨间习惯，开启高效有序的一天。">
+    <meta name="keywords" content="六点,早晨六点,早起,晨间习惯,时间管理,自律生活,早起打卡,生物钟,晨间仪式,效率提升">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部信息栏 */
+        .top-bar {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin-left: 16px;
+            transition: color 0.2s;
+        }
+
+        .top-bar a:hover {
+            color: #f39c12;
+        }
+
+        /* 页眉 */
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 36px;
+            margin-right: 12px;
+            background: rgba(255,255,255,0.2);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+
+        /* 导航 */
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 14px 24px;
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        /* 首屏大图 */
+        .hero {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 70%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,126,234,0.08) 0%, transparent 70%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-time {
+            display: inline-block;
+            background: #667eea;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+        }
+
+        .hero-time span {
+            font-size: 44px;
+            font-weight: 800;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* 栏目区块通用 */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 30px;
+            color: #2d3748;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #718096;
+            margin-top: 12px;
+            font-size: 16px;
+        }
+
+        /* 早起好处卡片 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .benefit-card p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* 科学方法 */
+        .method-section {
+            background: #fff;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .method-item {
+            padding: 24px;
+            border-left: 4px solid #667eea;
+            background: #f8fafc;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .method-item h4 {
+            font-size: 18px;
+            color: #2d3748;
+            margin-bottom: 12px;
+        }
+
+        .method-item p, .method-item ul {
+            color: #4a5568;
+            font-size: 15px;
+        }
+
+        .method-item ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+
+        .method-item li {
+            margin-bottom: 6px;
+        }
+
+        /* 作息时间表 */
+        .schedule-table {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 40px 0;
+        }
+
+        .schedule-list {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px dashed #e2e8f0;
+            transition: background 0.2s;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-row:hover {
+            background: #f7fafc;
+        }
+
+        .time {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 16px;
+            min-width: 80px;
+        }
+
+        .activity {
+            flex: 1;
+            margin-left: 20px;
+            color: #2d3748;
+        }
+
+        .time-icon {
+            font-size: 20px;
+        }
+
+        /* 成功案例 */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .story-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .story-card h4 {
+            font-size: 17px;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .story-role {
+            color: #718096;
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .story-card p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .story-tag {
+            display: inline-block;
+            background: #ebf4ff;
+            color: #3182ce;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 16px;
+            align-self: flex-start;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background: #edf2f7;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #667eea;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s;
+            color: #4a5568;
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 20px;
+            max-height: 500px;
+        }
+
+        /* 行动号召 */
+        .cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #667eea;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h5 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #bdc3c7;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #f39c12;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero-time span {
+                font-size: 32px;
+            }
+
+            .section-title h3 {
+                font-size: 24px;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .logo-area {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-icon {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+
+            .schedule-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                padding: 12px 8px;
+            }
+
+            .activity {
+                margin-left: 0;
+                margin-top: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .nav-menu li a {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 35px 0;
+            }
+
+            .benefit-card, .story-card {
+                padding: 20px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>☀️ 六点生活指南 - 让每个清晨更有价值</span>
+            <span>
+                <a href="#">早起打卡</a>
+                <a href="#">晨间社群</a>
+                <a href="#">帮助中心</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- 页眉 -->
+    <header>
+        <div class="container logo-area">
+            <a href="#" class="logo">
+                <div class="logo-icon">🌅</div>
+                <div class="logo-text">
+                    <h1>六点</h1>
+                    <p>清晨六点 · 开启美好一天</p>
+                </div>
+            </a>
+            <div style="color: #fff; font-size: 15px; opacity: 0.9; text-align: right;">
+                <div>⏰ 现在时间</div>
+                <div id="current-time" style="font-size: 20px; font-weight: 600; margin-top: 4px;"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#benefits">早起好处</a></li>
+                <li><a href="#method">科学方法</a></li>
+                <li><a href="#schedule">作息表</a></li>
+                <li><a href="#stories">人物故事</a></li>
+                <li><a href="#faq">常见问题</a></li>
+                <li><a href="#cta">立即行动</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container">
+            <h2>六点，不是束缚，而是自由</h2>
+            <p>当第一缕阳光洒进窗台，当世界还未完全苏醒，你已经拥有了属于自己的时间。六点起床，不是痛苦的煎熬，而是与更好的自己相遇的开始。</p>
+            <div class="hero-time">
+                <span>06:00</span> AM · 每日新生
+            </div>
+        </div>
+    </section>
+
+    <!-- 早起好处 -->
+    <section class="section" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h3>为什么要坚持六点起床</h3>
+                <p>早起带来的改变，远超你的想象</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h4>大脑更清醒</h4>
+                    <p>清晨是大脑最清醒的时刻，没有信息轰炸，专注力最高。许多高效人士都选择在这个时段处理最重要的工作或学习任务。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h4>时间更充裕</h4>
+                    <p>比平时早起两小时，一年就多出730小时，相当于30个完整日夜。这些时间可以用于阅读、运动、学习或陪伴家人。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h4>身心更健康</h4>
+                    <p>规律的作息有助于调节生物钟，改善睡眠质量。早晨的阳光和新鲜空气，让身体和心情都充满活力。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>自律更自信</h4>
+                    <p>每天战胜懒惰，坚持早起，会给你带来强烈的掌控感和成就感。自律的积累，会让你的生活越来越有秩序。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🍳</div>
+                    <h4>享受早餐</h4>
+                    <p>不用再匆忙对付早餐，你可以从容地为自己和家人准备一顿营养丰富的早餐，开启元气满满的一天。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚗</div>
+                    <h4>避开拥堵</h4>
+                    <p>无论是通勤还是出行，早起都能让你避开人流和车流高峰，减少不必要的等待和焦虑，让路途更顺畅。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科学方法 -->
+    <section class="section method-section" id="method">
+        <div class="container">
+            <div class="section-title">
+                <h3>科学早起的实用方法</h3>
+                <p>从今天开始，循序渐进地调整你的作息</p>
+            </div>
+            <div class="method-grid">
+                <div class="method-item">
+                    <h4>🌙 循序渐进调整法</h4>
+                    <p>不要试图一天内从七点半突然改到六点。建议每3-5天提前15分钟起床，给身体一个适应的过程。例如：</p>
+                    <ul>
+                        <li>第一周：6:45 起床</li>
+                        <li>第二周：6:30 起床</li>
+                        <li>第三周：6:15 起床</li>
+                        <li>第四周：6:00 起床</li>
+                    </ul>
+                </div>
+                <div class="method-item">
+                    <h4>💡 光线唤醒法</h4>
+                    <p>睡前拉开部分窗帘，让早晨的自然光透入房间。光线会抑制褪黑素分泌，帮助你自然醒来。如果自然光不足，可以购买模拟日出的唤醒灯。</p>
+                </div>
+                <div class="method-item">
+                    <h4>📵 睡前断网法</h4>
+                    <p>睡前一小时远离手机和电脑屏幕。蓝光会干扰褪黑素分泌，影响入睡。可以改为阅读纸质书、听轻音乐或做简单拉伸。</p>
+                </div>
+                <div class="method-item">
+                    <h4>🎯 目标设定法</h4>
+                    <p>为早起安排一个有吸引力的活动，比如晨跑、读一本喜欢的书、写晨间日记或学习一项新技能。让早起有期待，而不是为了早起而早起。</p>
+                </div>
+                <div class="method-item">
+                    <h4>👥 伙伴监督法</h4>
+                    <p>找到同样想早起的朋友，互相打卡监督。也可以加入早起社群，看到别人都在坚持，你也会更有动力。公开承诺的效果往往比默默坚持更好。</p>
+                </div>
+                <div class="method-item">
+                    <h4>🔄 固定起床仪式</h4>
+                    <p>起床后做一系列固定的小动作，形成条件反射。例如：伸懒腰 → 喝一杯温水 → 拉开窗帘 → 打开音乐 → 洗漱。仪式感会帮助大脑快速清醒。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作息时间表 -->
+    <section class="schedule-table" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h3>六点晨间黄金作息表</h3>
+                <p>参考这套安排，让你的早晨高效而从容</p>
+            </div>
+            <div class="schedule-list">
+                <div class="schedule-row">
+                    <div class="time">06:00 - 06:10</div>
+                    <div class="activity">起床、伸懒腰、喝一杯温水</div>
+                    <div class="time-icon">💧</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time">06:10 - 06:30</div>
+                    <div class="activity">洗漱、简单拉伸或冥想</div>
+                    <div class="time-icon">🧘</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time">06:30 - 07:00</div>
+                    <div class="activity">运动（慢跑、瑜伽、力量训练等）</div>
+                    <div class="time-icon">🏃</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time">07:00 - 07:30</div>
+                    <div class="activity">营养早餐时间</div>
+                    <div class="time-icon">🥗</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time">07:30 - 08:00</div>
+                    <div class="activity">阅读、学习或规划当天工作</div>
+                    <div class="time-icon">📖</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time">08:00 之后</div>
+                    <div class="activity">从容出门，开始高效的一天</div>
+                    <div class="time-icon">🚀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 人物故事 -->
+    <section class="section" id="stories">
+        <div class="container">
+            <div class="section-title">
+                <h3>他们的六点时刻</h3>
+                <p>来看一看早起者们的真实感受</p>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-avatar">林</div>
+                    <h4>林先生</h4>
+                    <div class="story-role">程序员 · 坚持早起 2 年</div>
+                    <p>"以前总是熬夜写代码，白天精神很差。开始六点起床后，我把最重要的技术学习放在早晨，头脑特别清晰，效率比以前晚上加班高得多。现在我已经很少熬夜了。"</p>
+                    <span class="story-tag">技术成长</span>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">陈</div>
+                    <h4>陈女士</h4>
+                    <div class="story-role">二胎妈妈 · 坚持早起 1 年</div>
+                    <p>"两个孩子早上七点多醒来后，我就完全没有自己的时间了。六点起床后，我可以安静地喝杯咖啡、做十分钟瑜伽、写写日记。这一个小时是我一天中最珍贵的独处时光。"</p>
+                    <span class="story-tag">自我空间</span>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">苏</div>
+                    <h4>苏同学</h4>
+                    <div class="story-role">考研党 · 坚持早起 10 个月</div>
+                    <p>"备考期间压力很大，但每天六点起床去图书馆占座，让我觉得这一天已经赢在了起跑线上。早晨背单词、做数学题，效率特别高。最终成功上岸，早起功不可没。"</p>
+                    <span class="story-tag">学业进步</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h3>关于六点早起的常见疑问</h3>
+                <p>这里有你可能想问的问题</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">我习惯熬夜，真的能改成六点起床吗？</div>
+                    <div class="faq-answer">可以，但需要耐心。关键是循序渐进，不要急于求成。首先将入睡时间逐步提前，每3-5天提前15-30分钟。同时，早晨起床后尽量接触阳光，白天保持适量运动，晚上减少屏幕使用时间。坚持2-4周，生物钟会逐渐调整过来。如果实在无法在六点起床，也可以先从六点半或七点开始，逐步过渡。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">周末要不要保持六点起床？</div>
+                    <div class="faq-answer">建议尽量保持规律。如果周末作息与工作日相差过大（比如周末睡到十点），周一早上会非常痛苦，这就是所谓的"社会时差"。当然，周末可以适当放松，比平时晚起30-60分钟，但最好不要超过一小时。保持相对固定的作息，会让身体更容易适应。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">冬天早上太冷，起不来怎么办？</div>
+                    <div class="faq-answer">可以提前做好准备工作：睡前将第二天要穿的衣服放在床边，打开暖气定时功能，让房间在起床前变得温暖。床边放一个保温杯，醒来先喝几口温水。也可以把闹钟放在必须起身才能关掉的地方。冬天早起确实需要更多意志力，但坚持下来，你会发现冬日清晨格外宁静美好。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">六点起床后做什么最有价值？</div>
+                    <div class="faq-answer">因人而异，取决于你的目标。一般建议优先做那些需要高度专注、平时没有时间做的事：学习新技能、阅读深度书籍、写作、冥想、运动等。也可以用来规划一天的工作，让接下来的时间更有条理。关键是选择一件你真正喜欢或有意义的事，让早起成为期待而不是负担。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">我早起后还是觉得很困，怎么办？</div>
+                    <div class="faq-answer">刚调整作息时犯困是正常的。可以尝试：起床后立即拉开窗帘，接触自然光；用冷水洗脸；做一些轻度运动促进血液循环；早餐摄入适量蛋白质，避免高糖食物。另外，注意前一晚的睡眠质量，确保7-8小时的睡眠时间。如果长期早起后仍然严重困倦，可能需要检查睡眠质量或咨询医生。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h3>今晚早点睡，明天六点见</h3>
+            <p>改变不需要等到某个特别的日子，从明天清晨开始，给自己一个不一样的早晨。</p>
+            <a href="#" class="cta-button">☀️ 加入早起打卡计划</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>六点生活</h5>
+                    <a href="#">关于我们</a>
+                    <a href="#">早起故事征集</a>
+                    <a href="#">合作伙伴</a>
+                </div>
+                <div class="footer-col">
+                    <h5>实用工具</h5>
+                    <a href="#">早起打卡</a>
+                    <a href="#">睡眠计算器</a>
+                    <a href="#">晨间日记模板</a>
+                </div>
+                <div class="footer-col">
+                    <h5>内容精选</h5>
+                    <a href="#">早起与效率</a>
+                    <a href="#">健康作息指南</a>
+                    <a href="#">晨间运动推荐</a>
+                </div>
+                <div class="footer-col">
+                    <h5>联系我们</h5>
+                    <a href="#">帮助中心</a>
+                    <a href="#">意见反馈</a>
+                    <a href="#">商务合作</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 六点生活指南 · 每个清晨都值得期待 | 本站内容仅供健康生活参考</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 显示当前时间
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                timeElement.textContent = hours + ':' + minutes + ':' + seconds;
+            }
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // FAQ 折叠交互
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                const wasActive = item.classList.contains('active');
+                // 关闭所有
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                // 如果之前没有激活，则打开当前
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+                  </html>
