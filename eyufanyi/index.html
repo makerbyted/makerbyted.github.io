@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄语翻译器-准确可靠的俄中互译工具与使用指南</title>
+    <meta name="description" content="俄语翻译器专题页，提供俄语翻译工具推荐、俄汉互译技巧、常用俄语词汇场景解析及常见问题解答，帮助您轻松跨越语言障碍。">
+    <meta name="keywords" content="俄语翻译器,俄语翻译,俄汉互译,中俄翻译,俄语学习,俄语工具">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f5f7fa;
+            color: #1f2d3d;
+            line-height: 1.6;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b3d91;
+        }
+        .logo-icon {
+            font-size: 2rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-weight: 500;
+        }
+        .nav-links a {
+            color: #334e68;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #0b3d91;
+        }
+        .nav-cta {
+            background: #0b3d91;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #123f7e;
+        }
+
+        /* 主视觉 Hero */
+        .hero {
+            background: linear-gradient(135deg, #0b3d91 0%, #1e5bb8 50%, #2f6fbe 100%);
+            color: #fff;
+            padding: 70px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+            margin-bottom: 24px;
+            max-width: 500px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #ffffff;
+            color: #0b3d91;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+        }
+        .hero-demo {
+            flex: 1 1 350px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .demo-box {
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+            color: #1f2d3d;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .demo-box label {
+            display: block;
+            font-size: 0.8rem;
+            color: #8296ab;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .demo-box .lang-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            min-height: 30px;
+        }
+        .demo-arrow {
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 4px 0;
+            color: #0b3d91;
+        }
+
+        /* 功能介绍 */
+        .features-section {
+            padding: 70px 0 50px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #0b3d91;
+            margin-bottom: 12px;
+        }
+        .section-title p {
+            color: #627d98;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1f2d3d;
+        }
+        .feature-card p {
+            color: #486581;
+            font-size: 0.95rem;
+        }
+
+        /* 工具推荐 */
+        .tools-section {
+            background: #ffffff;
+            padding: 60px 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .tool-item {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 24px;
+            border-left: 5px solid #0b3d91;
+            transition: background 0.2s;
+        }
+        .tool-item:hover {
+            background: #f0f5fa;
+        }
+        .tool-item h3 {
+            font-size: 1.2rem;
+            color: #0b3d91;
+            margin-bottom: 8px;
+        }
+        .tool-item p {
+            color: #334e68;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tool-tags span {
+            background: #e1e9f0;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0b3d91;
+        }
+
+        /* 场景应用 */
+        .scenario-section {
+            padding: 60px 0;
+        }
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .scenario-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .scenario-card h3 {
+            color: #0b3d91;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e1e9f0;
+            padding-bottom: 8px;
+        }
+        .scenario-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #e5eaf0;
+            font-size: 0.95rem;
+            color: #334e68;
+        }
+        .scenario-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #ffffff;
+            padding: 60px 0;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            padding: 20px 24px;
+            transition: background 0.2s;
+        }
+        .faq-item:hover {
+            background: #f0f5fa;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #1f2d3d;
+            font-size: 1.05rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.6rem;
+            color: #0b3d91;
+            font-weight: 400;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            margin-top: 14px;
+            color: #486581;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: #102a43;
+            color: #9fb3c8;
+            padding: 40px 0 30px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col {
+            flex: 1 1 200px;
+        }
+        .footer-col h4 {
+            color: #d9e2ec;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #243b53;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px 0;
+                gap: 10px;
+            }
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: space-around;
+                gap: 10px;
+                padding: 10px 0 0;
+                border-top: 1px solid #eef2f6;
+            }
+            .nav-cta {
+                display: none;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-demo {
+                margin-top: 10px;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.7rem;
+            }
+            .btn-primary, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-icon">🈯</span>
+                <span>俄语翻译在线</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">功能</a>
+                <a href="#tools">推荐工具</a>
+                <a href="#scenarios">应用场景</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#tools" class="nav-cta">立即使用</a>
+        </div>
+    </header>
+
+    <!-- 主视觉 -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <span class="hero-badge">🔤 支持俄汉双向互译</span>
+                <h1>俄语翻译器<br>让沟通不再有障碍</h1>
+                <p>无论是旅行、商务、学术还是日常学习，快速准确的俄语翻译工具都能帮您轻松理解与表达。我们为您整理了实用的翻译方案与工具推荐。</p>
+                <div class="hero-actions">
+                    <a href="#tools" class="btn-primary">选择翻译工具</a>
+                    <a href="#scenarios" class="btn-outline">查看使用场景</a>
+                </div>
+            </div>
+            <div class="hero-demo">
+                <div class="demo-box">
+                    <label>俄语原文</label>
+                    <div class="lang-text">Здравствуйте, как пройти в библиотеку?</div>
+                </div>
+                <div class="demo-arrow">⬇</div>
+                <div class="demo-box">
+                    <label>中文译文</label>
+                    <div class="lang-text">您好，请问去图书馆怎么走？</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特点 -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么需要一款好用的俄语翻译器？</h2>
+                <p>俄语使用人数超过2.6亿，是联合国官方语言之一。面对复杂的语法和独特的西里尔字母，一款得力的翻译工具能显著提升沟通效率。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>即时翻译</h3>
+                    <p>输入或粘贴文本，几秒内获得翻译结果，适用于聊天、邮件、文档快速理解。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>离线可用</h3>
+                    <p>部分优秀工具支持下载离线语言包，在没有网络的环境下依然可以完成基础翻译。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📷</div>
+                    <h3>拍照翻译</h3>
+                    <p>遇到路牌、菜单、文件时，直接使用摄像头取词或拍照，文字即刻转为中文或俄语。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>语音输入与朗读</h3>
+                    <p>支持语音识别输入及标准发音朗读，帮助您学习正确语调并练习口语。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>常用语手册</h3>
+                    <p>内置旅行、购物、应急等分类常用语，一键复制或发音，适合快速应急。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>手写与OCR</h3>
+                    <p>支持手写西里尔字母识别，并可对图片中的印刷体文字进行提取翻译。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工具推荐 -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>主流俄语翻译器对比与推荐</h2>
+                <p>不同工具各有侧重：有的擅长精准翻译，有的强在离线能力。以下为您梳理了几个常见选择。</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <h3>在线词典与翻译平台</h3>
+                    <p>适合快速查询单词和短句，提供释义、变位、例句等丰富内容，是学习者的常用参考。</p>
+                    <div class="tool-tags">
+                        <span>查词方便</span>
+                        <span>语法详解</span>
+                        <span>免费</span>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <h3>通用翻译应用</h3>
+                    <p>支持百余种语言互译，界面简洁，适合日常生活场景。多数提供拍照和语音功能。</p>
+                    <div class="tool-tags">
+                        <span>拍照翻译</span>
+                        <span>语音对话</span>
+                        <span>离线包</span>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <h3>俄语专用学习软件</h3>
+                    <p>结合翻译与学习功能，包含单词卡片、变格表、听力练习等，适合系统学习俄语的人群。</p>
+                    <div class="tool-tags">
+                        <span>学习模式</span>
+                        <span>变格变位</span>
+                        <span>分级内容</span>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <h3>浏览器翻译插件</h3>
+                    <p>浏览俄文网站时一键翻译全文，支持划词翻译，是阅读资料和新闻的好帮手。</p>
+                    <div class="tool-tags">
+                        <span>网页翻译</span>
+                        <span>划词取词</span>
+                        <span>轻量</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用场景 -->
+    <section class="scenario-section" id="scenarios">
+        <div class="container">
+            <div class="section-title">
+                <h2>俄语翻译器的典型使用场景</h2>
+                <p>从出国旅行到学术研究，不同场景对翻译的需求各有不同。找到最适合您的用法。</p>
+            </div>
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <h3>✈️ 旅行与日常出行</h3>
+                    <ul>
+                        <li>机场、车站问路与购票</li>
+                        <li>餐厅点餐、酒店入住沟通</li>
+                        <li>查看交通标识与景点介绍</li>
+                        <li>紧急情况联系求助</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h3>💼 商务与工作沟通</h3>
+                    <ul>
+                        <li>邮件与商务信函翻译</li>
+                        <li>合同条款初步理解</li>
+                        <li>视频会议实时字幕辅助</li>
+                        <li>产品说明书查阅</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h3>🎓 学习与学术研究</h3>
+                    <ul>
+                        <li>阅读俄语文献与资料</li>
+                        <li>撰写论文时的参考翻译</li>
+                        <li>学习语法和词汇搭配</li>
+                        <li>准备俄语等级考试</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h3>🎬 文化娱乐与社交</h3>
+                    <ul>
+                        <li>观看俄剧、电影字幕理解</li>
+                        <li>浏览俄语社交媒体内容</li>
+                        <li>与俄语朋友聊天交流</li>
+                        <li>听懂俄语歌曲大意</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 选择建议 -->
+    <section class="faq-section" style="background:#f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>如何选择适合您的俄语翻译器？</h2>
+                <p>根据使用频率、网络环境、设备兼容性等条件，可以快速做出判断。</p>
+            </div>
+            <div style="max-width:800px;margin:0 auto;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+                <div class="feature-card" style="text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:8px;">📱</div>
+                    <h3>经常出行</h3>
+                    <p>优先选择支持离线包和拍照翻译的应用，确保在无网络时也能使用。</p>
+                </div>
+                <div class="feature-card" style="text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:8px;">💻</div>
+                    <h3>办公学习</h3>
+                    <p>需要长文本翻译和术语准确性，建议使用支持文档上传的翻译平台。</p>
+                </div>
+                <div class="feature-card" style="text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:8px;">🗣️</div>
+                    <h3>口语练习</h3>
+                    <p>注重发音和语音交互，选择带高质量语音合成与识别功能的工具。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于俄语翻译的常见问题</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>机器翻译的俄语结果可靠吗？</summary>
+                    <p>对于日常用语和简单句，主流翻译工具已经具备较高准确度。但涉及法律、医疗、文学等专业内容时，建议将机器翻译作为参考，并寻求人工校对。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>俄语字母怎么快速输入？</summary>
+                    <p>您可以在设备中添加俄语键盘。手机端通常直接在键盘设置中添加；电脑可使用系统自带的输入法切换功能。许多翻译工具也支持手写或虚拟键盘输入西里尔字母。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>有没有完全免费的俄语翻译器？</summary>
+                    <p>市面上大多数在线翻译平台和基础版应用都提供免费服务，满足普通查询需求。部分高级功能（如超长文本翻译、专业词库）可能需要订阅，请根据个人需要选择。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>翻译俄语长文本时有哪些技巧？</summary>
+                    <p>尽量将文本分段翻译，避免过长句子导致语义模糊。若原文有排版混乱，先清理格式。对于含大量专业术语的内容，建议先查找相关术语表，或使用带有术语库的工具。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>俄语翻译器能帮助学习俄语吗？</summary>
+                    <p>可以辅助学习。通过阅读对照译文、收听发音、查看例句，能够帮助理解句式结构和词汇用法。但想要掌握语法和口语，仍需系统学习和大量练习。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>如何提高俄语翻译的准确率？</summary>
+                    <p>确保输入文本拼写正确，尽量使用规范书面语。对于有歧义的词，可尝试提供上下文。部分工具允许用户选择“正式/非正式”语气，也能改善翻译结果。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>俄语翻译器</h4>
+                    <ul>
+                        <li>俄汉互译工具推荐</li>
+                        <li>翻译技巧与指南</li>
+                        <li>俄语学习资源</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门功能</h4>
+                    <ul>
+                        <li>在线翻译</li>
+                        <li>拍照翻译</li>
+                        <li>语音翻译</li>
+                        <li>离线词典</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关语言</h4>
+                    <ul>
+                        <li>中文-俄语</li>
+                        <li>俄语-中文</li>
+                        <li>乌克兰语翻译</li>
+                        <li>白俄罗斯语</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li>使用说明</li>
+                        <li>隐私政策</li>
+                        <li>意见反馈</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 俄语翻译器专题指南 · 让语言不再是边界</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
